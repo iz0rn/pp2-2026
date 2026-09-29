@@ -1,25 +1,25 @@
 #
-# bmi 계산 함수
-# Body Mass Index (BMI) 계산 함수
+#bmi 계산기
 #
+def calculate_bmi(weight: float, height_cm: float) -> float:
+    height_m = height_cm / 100
+    return weight / (height_m ** 2)
 
-def get_bmi(weight_kg:float, height_m:float) -> float:
-   bmi =weight_kg / (height_m ** 2)
-   return bmi
+def classify_bmi(bmi: float) -> str:
+    if bmi < 18.5:
+        return "저체중"
+    elif bmi < 25:
+        return "정상"
+    elif bmi < 30:
+        return "과체중"
+    else:
+        return "비만"
 
-def test_get_bmi():
-    weight = 80.0
-    height = 1.77
-    B = get_bmi(weight, height)
-    print(f"키{height} 몸무게{weight} BMI는 BMI:{B}입니다")
+def tast_calculate_bmi() -> None:
+    weight = float(input("체중(kg): "))
+    height_cm = float(input("키(cm): "))
+    bmi = calculate_bmi(weight, height_cm)
+    print(f"체중: {weight}kg, 키: {height_cm}cm, BMI: {bmi:.2f}, 분류: {classify_bmi(bmi)}")
 
 if __name__ == "__main__":
-    test_get_bmi()
-   
-
-def func(x,y):
-    return x+y
-
-func(2,3)
-
-funhc = lamda x 
+    tast_calculate_bmi()
