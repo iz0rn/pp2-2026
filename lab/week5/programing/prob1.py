@@ -1,6 +1,5 @@
-# 
-
-
+# 작성자: 김민재
+# 작성일: 2026.10.13
 
 class Point:
     def __init__(self, x, y):
